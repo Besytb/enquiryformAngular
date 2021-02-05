@@ -1,0 +1,53 @@
+
+<div class="container">
+
+    <div class="main">
+        <div class="row">
+            <div class="col-8">
+                <form [formGroup]="enquiryForm" (ngSubmit)="submit()">
+
+                    <div class="form-group">
+
+
+                        <label for="">Name</label>
+                        <input formControlName="name" type="text" name="uname" class="form-control">
+                        <label *ngIf="enquiryForm.get('name')?.touched && enquiryForm.get('name')?.errors?.required" for="" style="color: red;">name is required</label>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="">PhoneNo</label>
+                        <input formControlName="phone" type="text" name="phone" class="form-control">
+                        <div *ngIf="enquiryForm.get('phone')?.touched && enquiryForm.get('phone')?.errors">
+                        <label *ngIf="enquiryForm.get('phone')?.errors?.required" for="" style="color: red;" >phoneNo is required</label>
+                        <label *ngIf="enquiryForm.get('phone')?.errors?.pattern" for="" style="color: red;" > invalid phoneNo </label>
+                    </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input formControlName="email" type="email" name="email" class="form-control">
+                        <div *ngIf="enquiryForm.get('email')?.touched && enquiryForm.get('email')?.errors">
+                            <label *ngIf="enquiryForm.get('email')?.errors?.required" for="" style="color: red;" >email is required</label>
+                            <label *ngIf="enquiryForm.get('email')?.errors?.pattern" for="" style="color: red;" > invalid email </label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="">Message</label>
+                        <input formControlName="message" type="text" name="message" class="form-control">
+                        <label *ngIf="enquiryForm.get('message')?.touched && enquiryForm.get('message')?.errors?.required" for="" style="color: red;" >message is required</label>
+                    </div>
+                    <br>
+                    <div>
+                        <button type="submit" class="btn btn-primary">submit</button>
+                    </div>
+
+                </form>
+
+
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+    </div>
+</div>

@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "enquiryFormAngular"
+  "defaultProject": "enquiryFormAngular",
+  "cli": {
+    "analytics": "044d11f6-700b-4a75-b29f-8ac4c99c47ce"
+  }
 }
